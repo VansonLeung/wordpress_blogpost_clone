@@ -1,0 +1,93 @@
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+    div.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    width: 480px;
+    }
+    div.gallery:hover {
+    border: 1px solid #777;
+    }
+    div.gallery img {
+    width: 100%;
+    height: auto;
+    }
+    div.desc {
+    padding: 15px;
+    text-align: center;
+    }
+    </style>
+  </head>
+  <body>
+
+
+
+    <input type="button" name="btn_refresh" value="Refresh" />
+
+    <div class="container">
+
+    </div>
+
+
+
+
+    <script type="text/javascript">
+
+      var blogposts_temp = [];
+
+
+
+      $("input[name=btn_refresh]").on("click", function(e) {
+        call_api_blogposts_list();
+      })
+
+
+
+      function call_api_blogposts_list()
+      {
+        $.get( "http://localhost:3000/blogposts/list", function( data ) {
+          
+          blogposts_temp.length = 0;
+          
+          var data_array = JSON.parse(data);
+
+          for (var k in data_array)
+          {
+            blogposts_temp.push(data_array[k]);
+          }
+
+          render_blogposts_list();
+
+        });
+      }
+
+
+
+
+
+      function render_blogposts_list()
+      {
+        $( ".container" ).html("");  // empty the container
+
+        for (var k in blogposts_temp)
+        {
+          var it = blogposts_temp[k];
+
+          var it_html = ''
+          + '<div class="gallery">'
+            + '<img src="'+it.image_url+'" width="600" height="400">'
+            + '<h2>'+it.title+'</h2>'
+            + '<p>'+it.desc+'</p>'
+          + '</div>';
+
+          $( ".container" ).append(it_html);
+        }
+      }
+
+    </script>
+
+
+  </body>
+</html>

@@ -1,0 +1,18 @@
+1. Install MySQL
+https://dev.mysql.com/downloads/mysql/
+
+
+2. Install Sequel Pro
+https://www.sequelpro.com/
+
+
+3. Open Sequel Pro, add bookmark:
+
+Host: 127.0.0.1
+Username: root
+Password: rootroot
+
+Save bookmark and Connect
+
+
+

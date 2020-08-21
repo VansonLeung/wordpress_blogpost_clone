@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+    </style>
+  </head>
+  <body>
+
+    <input type="button" name="btn_refresh" value="Refresh" />
+
+    <div class="container">
+
+    </div>
+
+
+    <script type="text/javascript">
+
+
+      $("input[name=btn_refresh]").on("click", function(e) {
+        $( ".container" ).append("<div>Hello</div>");
+      })
+
+    </script>
+
+
+  </body>
+</html>

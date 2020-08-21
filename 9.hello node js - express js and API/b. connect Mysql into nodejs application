@@ -1,0 +1,37 @@
+1. 使用指令：
+
+$ npm install --save mysql
+
+
+
+2. Edit index.js
+
+
+var mysql = require("mysql");
+
+var con = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "rootroot",
+    database: "wpc_db"
+});
+
+con.connect(function(err) {
+    if (err) {
+        console.log('connecting error');
+        return;
+    }
+    console.log('connecting success');
+});
+
+
+
+
+
+
+3. 使用 node 指令：
+
+$ node index.js
+
+
+

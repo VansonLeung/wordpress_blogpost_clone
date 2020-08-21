@@ -1,0 +1,45 @@
+-- Basic SQL commands (CRUD):
+
+
+-- 1. Create new entry
+
+INSERT INTO `blogposts` (
+	`title`, 
+	`desc`, 
+	`image_url`
+)
+VALUES (
+	"Post #1", 
+	"Hello first post", 
+	"https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
+);
+
+
+-- 2. Read entries
+
+SELECT * FROM `blogposts`;
+
+
+-- 3. Update entry
+
+UPDATE `blogposts`
+SET 
+	`title` = "Post #1 (Updated)", 
+	`desc` = "Hello first post (Updated)"
+WHERE `title` = "Post #1";
+
+
+-- 4. Read entries again
+
+SELECT * FROM `blogposts`;
+
+
+-- 5. Delete entry
+
+DELETE FROM `blogposts` WHERE `title` = "Post #1 (Updated)";
+
+
+-- 6. Read entries again
+
+SELECT * FROM `blogposts`;
+

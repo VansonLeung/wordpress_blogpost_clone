@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+    </style>
+  </head>
+  <body>
+
+    <input type="button" name="btn_refresh" value="Refresh" />
+
+    <pre class="container">
+
+    </pre>
+
+
+    <script type="text/javascript">
+
+
+      $("input[name=btn_refresh]").on("click", function(e) {
+        call_api();
+      })
+
+
+
+
+      function call_api()
+      {
+      	var collected_data = {}
+
+        $.get( "http://157.245.198.40:8659/weather/hk", function( data ) {
+          
+          collected_data = data;
+          render_data();
+
+        });
+      }
+
+
+      function render_data()
+      {
+        $( ".container" ).html(JSON.stringify(collected_data, true, "\t"));
+      }
+
+
+
+
+    </script>
+
+
+  </body>
+</html>

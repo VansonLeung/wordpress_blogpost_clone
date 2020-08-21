@@ -1,0 +1,21 @@
+1. Connect local MySQL by Sequel Pro
+
+2. Click "Choose Database..." -> Add database
+
+3. Name your database -> "wpc_db", and select encoding: UTF-8 Unicode (utf8) -> Add
+
+4. Click "Query" -> copy & paste below command
+
+CREATE TABLE `blogposts` (
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(512) DEFAULT NULL,
+  `desc` text,
+  `image_url` varchar(1024) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+, and then click "run..."
+
+
+
+
